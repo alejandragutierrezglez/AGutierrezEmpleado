@@ -1,0 +1,131 @@
+﻿@{
+    ViewData["Title"] = "GetAll";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Empleados:</h2>
+            <hr />
+        </div>
+    </div>
+</div>
+<br />
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript" src="/js/Empleado/EmpleadoCRUD.js" "></script>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-10">
+        </div>
+        <div class="col-md-1" style="padding-left:100px">
+            <button type="button" id="btnAgregar" class="btn btn btn-success" value="" onclick="Modal()">Agregar</button>
+            @*       @Html.ActionLink("Agregar", "Form", "Empleado", htmlAttributes: new { @class = "btn btn-success" })*@
+        </div>
+    </div>
+
+    <br />
+    <div class="row">
+        <div class="col-md-12">
+            <table id="tblEmpleados" class="table table-hover" border="1">
+                <thead>
+                    <tr>
+                        <th class="text-center" scope="col">Editar</th>
+                        <th class="text-center" scope="col">IdEmpleado</th>
+                        <th class="text-center" scope="col">NumeroNomina</th>
+                        <th class="text-center" scope="col">Nombre</th>
+                        <th class="text-center" scope="col">ApellidoPaterno</th>
+                        <th class="text-center" scope="col">ApellidoMaterno</th>
+                        <th class="text-center" scope="col">IdEstado</th>
+                        <th class="text-center" scope="col">Estado</th>
+                        <th class="text-center" scope="col">Eliminar</th>
+                    </tr>
+
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
+
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">×</button>
+                <h4 class="modal-title" id="myModalLabel">Empleado</h4>
+            </div>
+
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="txtIdEmpleado" placeholder="IdEmpleado" disabled="disabled" />
+                    </div>
+                    <div class="form-group">
+                        <label class="NumeroNomina">Numero de Nomina</label>
+                        <input type="text" class="form-control" id="txtNumeroNomina" placeholder="NumeroNomina" disabled="disabled" />
+                    </div>
+                    <div class="form-group">
+                        <label class="Nombre">Nombre</label>
+                        <input type="text" class="form-control" id="txtNombre" placeholder="Nombre" />
+                    </div>
+                    <div class="form-group">
+                        <label class="ApellidoPaterno">Apellido Paterno</label>
+                        <input type="text" class="form-control" id="txtApellidoPaterno" placeholder="Apellido Paterno" />
+                    </div>
+                    <div class="form-group">
+                        <label class="ApellidoMaterno">Apellido Materno</label>
+                        <input type="text" class="form-control" id="txtApellidoMaterno" placeholder="Apellido Materno" />
+                    </div>
+                    <div class="form-group">
+                        <label class="IdEstado">Id Estado</label>
+                        <select name="ddlCatEntidadFederativa" id="ddlCatEntidadFederativa" placeholder="IdEstado">
+                            <option></option>
+                        </select>
+
+                    </div>
+                </form>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn glyphicon glyphicon-pencil" id="btnUpdate" onclick="Validar()">Guardar</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript" src="/js/Empleado/EmpleadoCRUD.js" "></script>
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-5">
+
+            <div class="modal" id="ModalUpdate">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                        </div>
+                        <div class="modal-body">
+                            <h5>
+                                Acción completada con éxito
+                            </h5>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" onclick="GetAll()" value="Regresar" data-dismiss="modal">Regresar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript" src="/js/Empleado/EmpleadoCRUD.js" "></script>
+
